@@ -5,7 +5,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import './App.css';
 
 const App = () => {
-  const activeMenu = true;
+  const activeMenu = false;
 
 
   return (
@@ -24,12 +24,12 @@ const App = () => {
             </TooltipComponent>
           </div>
           {activeMenu ? (
-            <div>
+            <div className='w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white'>
               Sidebar
             </div>
           ) : (
-            <div>
-              Sidebar w-0
+            <div className='w-0 dark:bg-secondary-dark-bg'>
+              Sidebar
             </div>
           )}
         </div>
