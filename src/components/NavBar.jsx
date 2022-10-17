@@ -55,7 +55,7 @@ const Navbar = () => {
           dotColor='#03C9D7'
           customFunc={() => handleClick('chat')}
           color='blue'
-          icon={ <FiShoppingCart /> }
+          icon={ <BsChatLeft /> }
         />
         <NavButton
           title="Notifications"
