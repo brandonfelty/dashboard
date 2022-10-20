@@ -67,11 +67,16 @@ const ThemeSettings = () => {
                 position='TopCenter'
               >
                 <div className='relative mt-2 cursor-pointer flex gap-5 items-center'>
-                  <button>
+                  <button
+                    type='button'
+                    className='h-10 w-10 rounded-full cursor-pointer'
+                    style={{ backgroundColor: item.color }}
+                    onClick={() => {}}
+                  >
                     <BsCheck 
                       className={
                         `ml-2 text-2xl text-white
-                        ${item.color === true ? 'block' : 'hidden'}`
+                        ${item.color === false ? 'block' : 'hidden'}`
                       }
                     />
                   </button>
