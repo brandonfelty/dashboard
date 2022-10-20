@@ -43,8 +43,8 @@ export const ContextProvider = ({ children }) => {
         setScreenSize,
         currentColor,
         currentMode,
-        setCurrentColor,
-        setCurrentMode,
+        setColor,
+        setMode,
         themeSettings,
         setThemeSettings
       }}
