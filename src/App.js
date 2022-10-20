@@ -21,7 +21,10 @@ const App = () => {
               <button 
                 type="button"
                 className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white'
-                style={{ background: 'blue', borderRadius: '50%' }}
+                style={{ 
+                  background: currentColor ? currentColor : 'blue', 
+                  borderRadius: '50%' 
+                }}
                 onClick={() => setThemeSettings(true)}
               >
                 <FiSettings />
