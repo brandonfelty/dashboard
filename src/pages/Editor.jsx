@@ -12,9 +12,9 @@ const Editor = () => {
         title='Editor'
       />
       <RichTextEditorComponent>
+        <EditorData />
         <Inject 
           services={[ HtmlEditor, Toolbar, Image, Link, QuickToolbar ]} 
-
         />
       </RichTextEditorComponent>
     </div>
