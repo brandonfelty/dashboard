@@ -9,8 +9,9 @@ import { useStateContext } from './contexts/ContextProvider';
 import './App.css';
 
 const App = () => {
-  const { activeMenu, themeSettings, setThemeSettings } = useStateContext();
+  const { activeMenu, themeSettings, setThemeSettings, currentColor } = useStateContext();
 
+  console.log(currentColor)
   return (
     <div>
       <BrowserRouter>
