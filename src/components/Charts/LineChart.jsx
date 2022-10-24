@@ -27,4 +27,4 @@ const LineChart = () => {
   )
 }
 
-export default LineChart
+export default LineChart;
