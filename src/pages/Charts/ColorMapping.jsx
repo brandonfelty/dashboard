@@ -44,4 +44,4 @@ const ColorMapping = () => {
   )
 }
 
-export default ColorMapping
+export default ColorMapping;
