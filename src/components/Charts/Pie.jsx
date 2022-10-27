@@ -1,37 +1,46 @@
 import React from 'react';
-import { Inject, AccumulationChartComponent, AccumulationSeriesCollectionDirective, AccumulationSeriesDirective, PieSeries, AccumulationDataLabel, AccumulationTooltip } from '@syncfusion/ej2-react-charts';
+import { AccumulationChartComponent, AccumulationSeriesCollectionDirective, AccumulationSeriesDirective, AccumulationLegend, PieSeries, AccumulationDataLabel, Inject, AccumulationTooltip } from '@syncfusion/ej2-react-charts';
 
-import { Header } from '../../components'
-import { pieChartData  } from '../../data/dummy';
 import { useStateContext } from '../../contexts/ContextProvider';
 
-const Pie = () => {
+const Pie = ({ id, data, legendVisiblity, height }) => {
   const { currentMode } = useStateContext();
-  
+
   return (
-    <div className='m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl'>
-    <Header  category="Chart" title="Cost Breakdown"/>
-      <AccumulationChartComponent
-      id='pie-chart'
-      height='420px'
-      chartArea={{ border: { width: 0 }}}
-      tooltip={{ enable: true }}
+    <AccumulationChartComponent
+      id={id}
+      legendSettings={{ visible: legendVisiblity, background: 'white' }}
+      height={height}
       background={currentMode === 'Dark' ? '#33373E' : '#fff'}
+      tooltip={{ enable: true }}
     >
-      <Inject services={[ PieSeries, AccumulationDataLabel, AccumulationTooltip ]}/>
+      <Inject services={[AccumulationLegend, PieSeries, AccumulationDataLabel, AccumulationTooltip]} />
       <AccumulationSeriesCollectionDirective>
-        <AccumulationSeriesDirective 
-          dataSource={pieChartData}
-          dataLabel={{ visible: true, position: 'Outside',  connectorStyle: {     length: '20px', type: 'Curve' }, name: 'text', font:  {fontWeight: '600' } }}
-          xName='x'
-          yName='y'
-          type='Pie'
+        <AccumulationSeriesDirective
+          name="Sale"
+          dataSource={data}
+          xName="x"
+          yName="y"
+          innerRadius="40%"
+          startAngle={0}
+          endAngle={360}
+          radius="70%"
+          explode
+          explodeOffset="10%"
+          explodeIndex={2}
+          dataLabel={{
+            visible: true,
+            name: 'text',
+            position: 'Inside',
+            font: {
+              fontWeight: '600',
+              color: '#fff',
+            },
+          }}
         />
       </AccumulationSeriesCollectionDirective>
     </AccumulationChartComponent>
-    </div>
-    
-  )
-}
+  );
+};
 
 export default Pie;
