@@ -43,6 +43,25 @@ const Cart = () => {
             </div>
           </div>
         ))}
+        <div>
+          <div>
+            <p>Sub Total</p>
+            <p>$890</p>
+          </div>
+          <div>
+            <p>Total</p>
+            <p>$890</p>
+          </div>
+        </div>
+        <div>
+          <Button 
+            color='white'
+            bgColor={currentColor}
+            text='Place Order'
+            borderRadius='10px'
+            width='full'
+          />
+        </div>
       </div>
     </div>
   )
