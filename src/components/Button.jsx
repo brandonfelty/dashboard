@@ -1,11 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-const Button = ({ icon, bgColor, color, bgHoverColor, size, text, borderRadius, width }) => {
+import { useStateContext } from '../contexts/ContextProvider';
+
+const Button = ({ icon, bgColor, color, bgHoverColor, size, text, borderRadius, width, closeMenu }) => {
+
+  const { handleClose } = useStateContext();
+
   return (
     <button
       type='button'
       style={{ backgroundColor: bgColor, color, borderRadius }}
       className={`text-${size} p-3 w-${width} hover:drop-shadow-xl hover:bg-${bgHoverColor}`}
+      onClick={() => handleClose(closeMenu)}
     >
       {icon} {text}
     </button>
