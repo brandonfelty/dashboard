@@ -13,7 +13,7 @@ const Chat = () => {
       <div className='flex justify-between items-center'>
         <div className='flex gap-3'>
           <p className='font-semibold text-lg dark:text-gray-200'>Messages</p>
-          <button type='button' className='text-white text-xs rounded p-1 px-2 bg-orange'>
+          <button type='button' className='text-white text-xs rounded p-1 px-2 bg-orange-500'>
             5 New
           </button>
         </div>
@@ -26,10 +26,10 @@ const Chat = () => {
           closeMenu='chat'
         />
       </div>
-      <div>
+      <div className='mt-5'>
         {chatData.map((item, index) => (
-          <div key={index}>
-            <div>
+          <div key={index} className='flex items-center gap-5 border-b-1 border-color p-3 leading-8 cursor-pointer'>
+            <div className='relative'>
               <img 
                 className='rounded-full h-10 w-10'
                 src={item.image}
@@ -37,16 +37,17 @@ const Chat = () => {
               />
               <span 
                 style={{ background: item.dotColor }}
+                className='absolute inline-flex rounded-full h-2 w-2 right-0 -top-1'
               />
             </div>
             <div>
-              <p>{item.message}</p>
-              <p>{item.desc}</p>
-              <p>{item.time}</p>
+              <p className='font-semibold dark:text-gray-200'>{item.message}</p>
+              <p className='text-gray-500 dark:text-gray-400 text-sm'>{item.desc}</p>
+              <p className='text-gray-500 dark:text-gray-400 text-xs'>{item.time}</p>
             </div>
           </div>
         ))}
-        <div>
+        <div className='mt-5'>
           <Button 
             color='white'
             bgColor={currentColor}
