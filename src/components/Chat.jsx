@@ -26,6 +26,36 @@ const Chat = () => {
           closeMenu='chat'
         />
       </div>
+      <div>
+        {chatData.map((item, index) => (
+          <div key={index}>
+            <div>
+              <img 
+                className='rounded-full h-10 w-10'
+                src={item.image}
+                alt={item.message}
+              />
+              <span 
+                style={{ background: item.dotColor }}
+              />
+            </div>
+            <div>
+              <p>{item.message}</p>
+              <p>{item.desc}</p>
+              <p>{item.time}</p>
+            </div>
+          </div>
+        ))}
+        <div>
+          <Button 
+            color='white'
+            bgColor={currentColor}
+            text='See all messages'
+            borderRadius='10px'
+            width='full'
+          />
+        </div>
+      </div>
     </div>
   )
 }
