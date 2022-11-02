@@ -7,8 +7,21 @@ import { useStateContext } from '../contexts/ContextProvider';
 import avatar from '../data/avatar.jpg';
 
 const UserProfile = () => {
+  const { currentColor } = useStateContext();
+
   return (
-    <div>UserProfile</div>
+    <div>
+      <div className='mt-5'>
+        <Button 
+          color='white'
+          bgColor={currentColor}
+          text='Logout'
+          borderRadius='10px'
+          width='full'
+        />
+      </div>
+    </div>
+
   )
 }
 
