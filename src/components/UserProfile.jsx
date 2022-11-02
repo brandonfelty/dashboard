@@ -21,6 +21,12 @@ const UserProfile = () => {
           borderRadius='50%'
         />
       </div>
+      <div>
+        <img 
+          src={avatar}
+          alt='user-profile'
+        />
+      </div>
       <div className='mt-5'>
         <Button 
           color='white'
