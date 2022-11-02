@@ -26,6 +26,24 @@ const UserProfile = () => {
           src={avatar}
           alt='user-profile'
         />
+        <div>
+          <p> Micheal Roberts </p>
+          <p> Administrator </p>
+          <p> info@shop.com </p>
+        </div>
+      </div>
+      <div>
+        {userProfileData.map((item, index) => (
+          <div key={index}>
+            <button>
+              {item.icon}
+            </button>
+            <div>
+              <p>{item.title}</p>
+              <p>{item.desc}</p>
+            </div>
+          </div>
+        ))}
       </div>
       <div className='mt-5'>
         <Button 
